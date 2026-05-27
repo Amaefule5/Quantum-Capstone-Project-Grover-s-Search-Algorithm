@@ -109,8 +109,7 @@ def print_statevector_probabilities(statevector_data, highlight_index=None):
     num_states = len(statevector_data)
     num_qubits = int(math.log2(num_states))
 
-    print(f"
-Statevector Probabilities ({num_qubits} qubits, {num_states} states):")
+    print(f"\n  Statevector Probabilities ({num_qubits} qubits, {num_states} states):")
     print("-" * 50)
 
     for i in range(num_states):
@@ -130,8 +129,7 @@ if __name__ == "__main__":
     print("UTILITIES SELF-TEST")
     print("=" * 60)
 
-    print("
-[1] Testing validation:")
+    print("[1] Testing validation:")
     try:
         validate_solution_string("0010")
         print("  '0010' -> VALID")
@@ -143,20 +141,17 @@ if __name__ == "__main__":
     except ValueError as e:
         print(f"  '0120' -> Correctly rejected: {e}")
 
-    print("
-[2] Optimal iterations:")
+    print("\n [2] Optimal iterations:")
     for n in [2, 3, 4, 5, 6]:
         iters = calculate_optimal_iterations(n)
         print(f"  {n} qubits -> {iters} iterations")
 
-    print("
-[3] Qiskit bit ordering:")
+    print("\n   [3] Qiskit bit ordering:")
     test_cases = ["0000", "0001", "0010", "0100", "1000", "1111"]
     for bits in test_cases:
         idx = get_qiskit_state_index(bits)
         print(f"  '{bits}' -> index {idx} (binary: {format(idx, '04b')})")
 
-    print("
-" + "=" * 60)
+    print("\n" + "=" * 60)
     print("All tests passed!")
     print("=" * 60)

@@ -159,39 +159,33 @@ if __name__ == "__main__":
     import numpy as np
 
     # Test 1: Two-qubit circuit
-    print("
-[1] Two-qubit Grover (solution |11>):")
+    print("\n   [1] Two-qubit Grover (solution |11>):")
     qc2 = two_qubit_grover_11()
     print(f"Gates: {len(qc2.data)}")
     print(qc2.draw(output='text'))
 
     sv2 = Statevector.from_instruction(qc2)
     probs2 = np.abs(sv2.data) ** 2
-    print(f"
-Probabilities:")
+    print(f"Probabilities:")
     for i, p in enumerate(probs2):
         print(f"  |{format(i, '02b')}>: {p:.4f}")
 
     # Test 2: Four-qubit circuit
-    print("
-[2] Four-qubit Grover (solution |0010>):")
+    print("\n   [2] Four-qubit Grover (solution |0010>):")
     qc4 = four_qubit_grover("0010")
     print(f"Gates: {len(qc4.data)}")
 
     sv4 = Statevector.from_instruction(qc4)
     probs4 = np.abs(sv4.data) ** 2
     max_idx = np.argmax(probs4)
-    print(f"
-Solution |0010> probability: {probs4[4]:.4f}")
+    print(f"Solution |0010> probability: {probs4[4]:.4f}")
     print(f"Max probability state: |{format(max_idx, '04b')}>")
 
     # Test 3: Factory function
-    print("
-[3] Factory function:")
+    print("\n[3] Factory function:")
     qc_factory = create_grover_circuit(4, "1111")
     print(f"Factory created circuit with {len(qc_factory.data)} gates")
 
-    print("
-" + "=" * 60)
+    print("\n" + "=" * 60)
     print("Grover tests passed!")
     print("=" * 60)

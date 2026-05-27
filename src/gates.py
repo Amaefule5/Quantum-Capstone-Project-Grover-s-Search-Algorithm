@@ -222,41 +222,35 @@ if __name__ == "__main__":
     print("=" * 60)
 
     # Test 1: Hadamard all
-    print("
-[1] Testing apply_hadamard_all:")
+    print("\n   [1] Testing apply_hadamard_all:")
     qc = QuantumCircuit(3)
     apply_hadamard_all(qc)
     print(qc.draw(output='text'))
 
     # Test 2: Pauli-X all
-    print("
-[2] Testing apply_pauli_x_all:")
+    print("\n   [2] Testing apply_pauli_x_all:")
     qc = QuantumCircuit(3)
     apply_pauli_x_all(qc)
     print(qc.draw(output='text'))
 
     # Test 3: Multi-controlled-Z
-    print("
-[3] Testing apply_multi_controlled_z:")
+    print("\n   [3] Testing apply_multi_controlled_z:")
     qc = QuantumCircuit(4)
     apply_multi_controlled_z(qc, [0, 1, 2], 3)
     print(qc.draw(output='text'))
 
     # Test 4: Oracle marker
-    print("
-[4] Testing apply_oracle_marker (solution '0010'):")
+    print("\n   [4] Testing apply_oracle_marker (solution '0010'):")
     qc = QuantumCircuit(4)
     apply_oracle_marker(qc, "0010")
     print(qc.draw(output='text'))
 
     # Test 5: Diffusion
-    print("
-[5] Testing apply_diffusion_operator:")
+    print("\n   [5] Testing apply_diffusion_operator:")
     qc = QuantumCircuit(4)
     apply_diffusion_operator(qc)
     print(qc.draw(output='text'))
 
-    print("
-" + "=" * 60)
+    print("\n" + "=" * 60)
     print("All gate tests passed!")
     print("=" * 60)

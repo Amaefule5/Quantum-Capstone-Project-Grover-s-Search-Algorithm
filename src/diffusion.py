@@ -145,26 +145,22 @@ if __name__ == "__main__":
     print("=" * 60)
 
     # Test 1: Two-qubit diffusion
-    print("
-[1] Two-qubit diffusion circuit:")
+    print("\n   [1] Two-qubit diffusion circuit:")
     qc = QuantumCircuit(2)
     two_qubit_diffusion(qc)
     print(qc.draw(output='text'))
 
     # Test 2: Four-qubit diffusion
-    print("
-[2] Four-qubit diffusion circuit:")
+    print("\n   [2] Four-qubit diffusion circuit:")
     qc = QuantumCircuit(4)
     four_qubit_diffusion(qc)
     print(qc.draw(output='text'))
 
     # Test 3: Standalone circuit
-    print("
-[3] Standalone diffusion circuit:")
+    print("\n   [3] Standalone diffusion circuit:")
     diff = create_diffusion_circuit(4)
     print(f"Number of gates: {len(diff.data)}")
 
-    print("
-" + "=" * 60)
+    print("\n" + "=" * 60)
     print("Diffusion tests passed!")
     print("=" * 60)

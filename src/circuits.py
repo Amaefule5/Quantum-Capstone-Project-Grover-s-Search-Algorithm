@@ -67,16 +67,14 @@ def draw_circuit_text(circuit, title=None):
         str: Text representation of the circuit
     """
     if title:
-        print(f"
-{'='*50}")
+        print(f"{'='*50}")
         print(f"  {title}")
         print(f"{'='*50}")
 
     diagram = circuit.draw(output='text')
     print(diagram)
 
-    print(f"
-  Qubits: {circuit.num_qubits}")
+    print(f"\n  Qubits: {circuit.num_qubits}")
     print(f"  Gates: {len(circuit.data)}")
 
     return str(diagram)
@@ -89,8 +87,7 @@ def print_circuit_info(circuit):
     Args:
         circuit: The QuantumCircuit to analyze
     """
-    print(f"
-{'='*50}")
+    print(f"{'='*50}")
     print("  CIRCUIT INFORMATION")
     print(f"{'='*50}")
 
@@ -105,8 +102,7 @@ def print_circuit_info(circuit):
         name = instr.name
         gate_counts[name] = gate_counts.get(name, 0) + 1
 
-    print(f"
-  Gate breakdown:")
+    print(f"\n  Gate breakdown:")
     for gate, count in sorted(gate_counts.items()):
         print(f"    {gate}: {count}")
 
@@ -159,31 +155,26 @@ if __name__ == "__main__":
     from .grover import two_qubit_grover_11
 
     # Test 1: Add measurement
-    print("
-[1] Adding measurement:")
+    print("\n   [1] Adding measurement:")
     qc = two_qubit_grover_11()
     qc_meas = add_measurement(qc, inplace=False)
     print(f"Original gates: {len(qc.data)}")
     print(f"Measured gates: {len(qc_meas.data)}")
 
     # Test 2: Text drawing
-    print("
-[2] Text diagram:")
+    print("\n   [2] Text diagram:")
     draw_circuit_text(qc, "Two-Qubit Grover")
 
     # Test 3: Circuit info
-    print("
-[3] Circuit info:")
+    print("\n   [3] Circuit info:")
     print_circuit_info(qc)
 
     # Test 4: Comparison circuits
-    print("
-[4] Comparison circuits:")
+    print("\n   [4] Comparison circuits:")
     comparisons = create_comparison_circuits()
     for name, circ in comparisons.items():
         print(f"  {name}: {len(circ.data)} gates")
 
-    print("
-" + "=" * 60)
+    print("\n   " + "=" * 60)
     print("Circuits tests passed!")
     print("=" * 60)

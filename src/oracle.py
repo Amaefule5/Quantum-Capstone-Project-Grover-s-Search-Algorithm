@@ -136,8 +136,7 @@ if __name__ == "__main__":
     import numpy as np
 
     # Test 1: Two-qubit oracle
-    print("
-[1] Two-qubit oracle (solution |11>):")
+    print("\n   [1] Two-qubit oracle (solution |11>):")
     qc = QuantumCircuit(2)
     qc.x(0)
     qc.x(1)
@@ -147,8 +146,7 @@ if __name__ == "__main__":
     print(f"|11> amplitude: {sv.data[3]} (should be -1+0j)")
 
     # Test 2: Four-qubit oracle
-    print("
-[2] Four-qubit oracle (solution |0010>):")
+    print("\n   [2] Four-qubit oracle (solution |0010>):")
     qc = QuantumCircuit(4)
     qc.x(1)  # q1 = 1
     four_qubit_oracle(qc, "0010")
@@ -158,12 +156,10 @@ if __name__ == "__main__":
     print(f"Should have -1 phase: {np.isclose(sv.data[target_index], -1.0)}")
 
     # Test 3: Standalone oracle circuit
-    print("
-[3] Standalone oracle circuit:")
+    print("\n   [3] Standalone oracle circuit:")
     oracle = create_oracle_circuit(4, "1100")
     print(oracle.draw(output='text'))
 
-    print("
-" + "=" * 60)
+    print("\n" + "=" * 60)
     print("Oracle tests passed!")
     print("=" * 60)

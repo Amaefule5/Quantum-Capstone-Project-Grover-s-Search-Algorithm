@@ -158,7 +158,7 @@ def run_four_qubit_demo(solution="0010"):
         # Check if solution was most frequent
         most_frequent = max(counts, key=counts.get)
         print(f"\n  Most frequent result: |{most_frequent}>")
-        print(f"  Status: {'PASS' if most_frequent == solution[::-1] else 'FAIL'}")
+        print(f"\n  Status: {'PASS' if most_frequent == solution[::-1] else 'FAIL'}")
 
     except ImportError:
         print("  [qiskit-aer not installed, skipping measurement simulation]")
