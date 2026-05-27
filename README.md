@@ -41,16 +41,16 @@ For a database of size N = 2ⁿ:
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 This project implements Grover's algorithm from scratch with:
 
-✅ **2-qubit circuit** — Finds |11⟩ with **100% probability** (1 iteration)  
-✅ **4-qubit circuit** — Finds any 4-bit solution with **~96% probability** (3 iterations)  
-✅ **Modular architecture** — Clean separation of concerns across 6 source modules  
-✅ **Comprehensive test suite** — 33 unit tests covering all 16 possible solutions  
-✅ **Statevector & measurement simulation** — Exact probabilities + realistic shot-based stats  
-✅ **Visualization tools** — Text-based circuit diagrams and probability histograms  
+**2-qubit circuit** — Finds |11⟩ with **100% probability** (1 iteration)  
+**4-qubit circuit** — Finds any 4-bit solution with **~96% probability** (3 iterations)  
+**Modular architecture** — Clean separation of concerns across 6 source modules  
+**Comprehensive test suite** — 33 unit tests covering all 16 possible solutions  
+**Statevector & measurement simulation** — Exact probabilities + realistic shot-based stats  
+**Visualization tools** — Text-based circuit diagrams and probability histograms  
 
 ### Tech Stack
 - **Qiskit 2.0** — Quantum circuit framework
@@ -61,7 +61,7 @@ This project implements Grover's algorithm from scratch with:
 
 ---
 
-## 🎬 Live Demo Results
+## Live Demo Results
 
 ### 2-Qubit Grover's Algorithm (Solution: |11⟩)
 
@@ -104,7 +104,7 @@ q_1: + H +-*-+ H ++ X +-*-+ X ++ H +
 
   Solution |11> probability: 100.0%
   Expected: 100%
-  Status: ✅ PASS
+  Status: ✔️ PASS
 ```
 
 **Why 100%?** For N=4 states, 1 iteration is *exactly* optimal. The math works out perfectly — a special case that doesn't generalize to larger systems.
@@ -165,7 +165,7 @@ q_1: + H +-*-+ H ++ X +-*-+ X ++ H +
   Solution |0010> probability: 96.1%
   Maximum probability state: |0100>
   Expected: |0010> (index 4)
-  Status: ✅ PASS
+  Status: ✔️ PASS
 
 [STEP 4] Measurement simulation (1024 shots):
 
@@ -177,7 +177,7 @@ q_1: + H +-*-+ H ++ X +-*-+ X ++ H +
     |0111>:    4 shots (  0.4%)
 
   Most frequent result: |0100>
-  Status: ✅ PASS
+  Status: ✔️ PASS
 ```
 
 **Why ~96% and not 100%?** The optimal iteration count is π/4 × √16 ≈ 3.14, but we can only do integer iterations. 3 iterations gives ~96.1% — close to optimal. Doing 4 iterations would *overshoot* and decrease the probability!
@@ -196,19 +196,19 @@ All 16 possible 4-bit solutions tested:
    Testing multiple solutions:
   Solution   Index    Probability     Status
   --------------------------------------------------
-  |0000>   0          96.1%        ✅ PASS
-  |1111>   15         96.1%        ✅ PASS
-  |0010>   4          96.1%        ✅ PASS
-  |1000>   1          96.1%        ✅ PASS
-  |0101>   10         96.1%        ✅ PASS
-  |1010>   5          96.1%        ✅ PASS
+  |0000>   0          96.1%        ✔️ PASS
+  |1111>   15         96.1%        ✔️ PASS
+  |0010>   4          96.1%        ✔️ PASS
+  |1000>   1          96.1%        ✔️ PASS
+  |0101>   10         96.1%        ✔️ PASS
+  |1010>   5          96.1%        ✔️ PASS
 
    All solutions tested!
 ```
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 quantum-capstone/
@@ -236,7 +236,7 @@ quantum-capstone/
 
 ---
 
-## ⚡ Quick Start Guide
+## Quick Start Guide
 
 ### Prerequisites
 - Python 3.11, 3.12, 3.13, or 3.14
@@ -296,7 +296,7 @@ python -c "from src.grover import four_qubit_grover; \
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 ### The Complete Algorithm
 
@@ -363,11 +363,11 @@ k_opt = floor(π/4 × √N)
 | 4 | 16 | **3** | **~96%** |
 | 5 | 32 | 4 | ~97% |
 
-> ⚠️ **Critical**: Too few iterations = low probability. Too many = probability *decreases* again! It's like a pendulum swinging past the highest point.
+> **Critical**: Too few iterations = low probability. Too many = probability *decreases* again! It's like a pendulum swinging past the highest point.
 
 ---
 
-## ✅ Test Results
+## ✔️ Test Results
 
 ### Full Test Suite: 33/33 Passing
 
@@ -405,7 +405,7 @@ OK
 
 ---
 
-## 🔑 Key Concepts (For Beginners)
+## Key Concepts (For Beginners)
 
 ### Superposition
 Qubits can exist in multiple states simultaneously. A 4-qubit system exists in a superposition of all 16 possible states at once — this is the "quantum parallelism" that makes Grover's algorithm powerful.
@@ -427,7 +427,7 @@ Quantum interference is what makes this work. The oracle creates a phase differe
 
 ---
 
-## 🧩 Module Breakdown
+## Module Breakdown
 
 | Module | Purpose | Key Functions |
 |--------|---------|---------------|
@@ -441,7 +441,7 @@ Quantum interference is what makes this work. The oracle creates a phase differe
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -453,7 +453,7 @@ Quantum interference is what makes this work. The oracle creates a phase differe
 
 ---
 
-## 📚 Further Reading
+## Further Reading
 
 - [Qiskit Documentation](https://docs.quantum.ibm.com/)
 - [Grover's Algorithm — Qiskit Textbook](https://qiskit.org/textbook/ch-algorithms/grover.html)
@@ -461,10 +461,10 @@ Quantum interference is what makes this work. The oracle creates a phase differe
 
 ---
 
-## 📝 License
+## License
 
 **QuLearnLabs AI-SEQ Course 2026**  
-Amaefule Capstone Project
+Amaefule Chukwuemeka Timothy Capstone Project
 
 ---
 
