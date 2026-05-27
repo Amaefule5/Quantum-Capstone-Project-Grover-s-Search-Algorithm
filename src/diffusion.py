@@ -56,7 +56,11 @@ implements this reflection operation.
 """
 
 from qiskit import QuantumCircuit
-from .gates import apply_diffusion_operator
+
+try:
+    from .gates import apply_diffusion_operator
+except ImportError:
+    from gates import apply_diffusion_operator
 
 
 def two_qubit_diffusion(circuit):
@@ -148,13 +152,18 @@ if __name__ == "__main__":
     print("\n   [1] Two-qubit diffusion circuit:")
     qc = QuantumCircuit(2)
     two_qubit_diffusion(qc)
-    print(qc.draw(output='text'))
+    try:
+        from .circuits import draw_circuit_text
+    except ImportError:
+        from circuits import draw_circuit_text
+
+    draw_circuit_text(qc)
 
     # Test 2: Four-qubit diffusion
     print("\n   [2] Four-qubit diffusion circuit:")
     qc = QuantumCircuit(4)
     four_qubit_diffusion(qc)
-    print(qc.draw(output='text'))
+    draw_circuit_text(qc)
 
     # Test 3: Standalone circuit
     print("\n   [3] Standalone diffusion circuit:")

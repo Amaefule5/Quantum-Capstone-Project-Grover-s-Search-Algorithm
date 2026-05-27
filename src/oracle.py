@@ -23,8 +23,11 @@ non-solutions. This amplifies the solution's probability!
 """
 
 from qiskit import QuantumCircuit
-from .gates import apply_oracle_marker
 
+try:
+    from .gates import apply_oracle_marker
+except ImportError:
+    from gates import apply_oracle_marker
 
 def two_qubit_oracle_11(circuit):
     """
@@ -149,6 +152,7 @@ if __name__ == "__main__":
     print("\n   [2] Four-qubit oracle (solution |0010>):")
     qc = QuantumCircuit(4)
     qc.x(1)  # q1 = 1
+    qc.x(2)  # q2 = 1
     four_qubit_oracle(qc, "0010")
     sv = Statevector.from_instruction(qc)
     target_index = 4
@@ -158,8 +162,13 @@ if __name__ == "__main__":
     # Test 3: Standalone oracle circuit
     print("\n   [3] Standalone oracle circuit:")
     oracle = create_oracle_circuit(4, "1100")
-    print(oracle.draw(output='text'))
+    #print(oracle.draw(output='text'))
+    try:
+        from .circuits import draw_circuit_text
+    except ImportError:
+        from circuits import draw_circuit_text
 
+    draw_circuit_text(oracle) #"4-Qubit Oracle for |1100>")
     print("\n" + "=" * 60)
     print("Oracle tests passed!")
     print("=" * 60)

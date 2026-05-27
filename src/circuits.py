@@ -99,10 +99,6 @@ def draw_circuit_text(circuit, title=None):
     Returns:
         str: Text representation of the circuit
     """
-    diagram_text = str(diagram)
-    diagram_text = diagram_text.translate(BOX_DRAWING_TO_ASCII)
-    stdout_encoding = sys.stdout.encoding or "utf-8"
-
     if title:
         print(f"{'='*50}")
         print(f"  {title}")
@@ -115,11 +111,9 @@ def draw_circuit_text(circuit, title=None):
             category=RuntimeWarning,
         )
         diagram = circuit.draw(output='text')
-    diagram_text = str(diagram)
-    diagram = circuit.draw(output='text')
-    diagram_text = str(diagram)
+        diagram_text = str(diagram)
+
     diagram_text = diagram_text.translate(BOX_DRAWING_TO_ASCII)
-    
     stdout_encoding = sys.stdout.encoding or "utf-8"
     printable_diagram = diagram_text.encode(
         stdout_encoding, errors="replace"

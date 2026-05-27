@@ -68,4 +68,7 @@ Grover's algorithm provides a **quadratic speedup** for searching unsorted datab
 ## License
 
 CC BY-NC-ND 4.0 - QuLearnLabs 2026
-QuLearnLabs Capstone Project
+
+Amaefule Capstone Project
+
+AI-SEQ Course
