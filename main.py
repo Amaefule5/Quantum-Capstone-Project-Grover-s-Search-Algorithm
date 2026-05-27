@@ -230,10 +230,9 @@ def main():
     print("\n   To run specific test:")
     print("    python -m unittest tests.test_four_qubit -v")
     print("\n   To visualize a circuit:")
-    print("    python -c "from src.grover import four_qubit_grover; qc = four_qubit_grover('0010'); qc.draw(output='mpl')\"")
+    print('    python -c "from src.grover import four_qubit_grover; qc = four_qubit_grover(\'0010\'); qc.draw(output=\'mpl\')"')
     print("\n" + "=" * 60)
 
 
 if __name__ == "__main__":
     main()
-"""
