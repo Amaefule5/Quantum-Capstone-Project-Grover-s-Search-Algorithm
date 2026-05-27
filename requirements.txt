@@ -1,0 +1,18 @@
+# Core quantum computing framework
+# UPGRADED from 2.0.0 to 2.1.0 because Qiskit 2.1 REMOVED symengine dependency!
+# Qiskit 2.0.0 requires symengine<0.14, but those versions lack Python 3.14 wheels
+# Qiskit 2.1.0 uses an internal symbolic engine instead - no symengine needed!
+qiskit>=2.1.0
+
+# Quantum simulator (run circuits on classical computer)
+qiskit-aer
+
+# Numerical computing - Python 3.14 compatible
+numpy>=2.2.6
+
+# Circuit visualization and plotting - Python 3.14 compatible
+matplotlib>=3.10.9
+
+# Jupyter notebooks for interactive demos
+jupyter==1.1.1
+ipykernel==6.29.5
